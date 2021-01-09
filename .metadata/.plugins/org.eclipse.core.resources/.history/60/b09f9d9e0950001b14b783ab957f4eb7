@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xmlns:webflow-config="http://www.springframework.org/schema/webflow-config"
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
+		http://www.springframework.org/schema/webflow-config http://www.springframework.org/schema/webflow-config/spring-webflow-config-2.4.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+		http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<bean id="logging" class="org.limayrac.banque.Logging"></bean>
+	<import resource="classpath*:bdd-context.xml"/>
+	<import resource="classpath*:metier-context.xml"/>
+	<import resource="security-context.xml" />
+	<aop:config>
+		<aop:aspect id="loggingWindowsAspect" ref="logging">
+		<aop:pointcut
+			expression="execution(* org.limayrac.banque.*.*(..))"
+			id="windowsControllerPointcut" />
+			<aop:before method="beforeMethod"
+				pointcut-ref="windowsControllerPointcut" />
+			<aop:after-returning method="afterMethod"
+				pointcut-ref="windowsControllerPointcut" returning="result" />
+		</aop:aspect>
+	</aop:config>
+</beans>

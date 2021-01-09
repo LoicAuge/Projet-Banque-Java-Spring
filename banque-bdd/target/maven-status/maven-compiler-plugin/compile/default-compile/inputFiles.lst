@@ -1,0 +1,11 @@
+D:\workspace-sts-3.9.1.RELEASE\banque-bdd\src\main\java\org\limayrac\banque_bdd\entities\Client.java
+D:\workspace-sts-3.9.1.RELEASE\banque-bdd\src\main\java\org\limayrac\banque_bdd\dao\HibernateLog.java
+D:\workspace-sts-3.9.1.RELEASE\banque-bdd\src\main\java\org\limayrac\banque_bdd\dao\HibernateClient.java
+D:\workspace-sts-3.9.1.RELEASE\banque-bdd\src\main\java\org\limayrac\banque_bdd\entities\Log.java
+D:\workspace-sts-3.9.1.RELEASE\banque-bdd\src\main\java\org\limayrac\banque_bdd\entities\Compte.java
+D:\workspace-sts-3.9.1.RELEASE\banque-bdd\src\main\java\org\limayrac\banque_bdd\util\BanqueException.java
+D:\workspace-sts-3.9.1.RELEASE\banque-bdd\src\main\java\org\limayrac\banque_bdd\dao\ClientDAO.java
+D:\workspace-sts-3.9.1.RELEASE\banque-bdd\src\main\java\org\limayrac\banque_bdd\dao\LogDAO.java
+D:\workspace-sts-3.9.1.RELEASE\banque-bdd\src\main\java\org\limayrac\banque_bdd\dao\CompteDAO.java
+D:\workspace-sts-3.9.1.RELEASE\banque-bdd\src\main\java\org\limayrac\banque_bdd\dao\HibernateCompte.java
+D:\workspace-sts-3.9.1.RELEASE\banque-bdd\src\main\java\org\limayrac\banque_bdd\exec\Start.java

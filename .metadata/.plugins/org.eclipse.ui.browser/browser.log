@@ -1,0 +1,83 @@
+
+mai 08, 2020 15:20:09.59 NEW SESSION
+mai 08, 2020 15:20:09.59 [4436:7840:0508/152009.592:ERROR:browser_switcher_service.cc(238)] XXX Init()
+
+mai 08, 2020 15:37:40.11 NEW SESSION
+mai 08, 2020 15:37:40.11 [12708:5748:0508/153740.110:ERROR:browser_switcher_service.cc(238)] XXX Init()
+mai 08, 2020 15:42:28.00 [4048:7332:0508/154228.005:ERROR:browser_switcher_service.cc(238)] XXX Init()
+mai 08, 2020 15:42:51.49 [13028:4808:0508/154251.490:ERROR:browser_switcher_service.cc(238)] XXX Init()
+mai 08, 2020 15:42:53.16 [13028:9124:0508/154253.165:ERROR:get_updates_processor.cc(258)] PostClientToServerMessage() failed during GetUpdates with error 2
+mai 08, 2020 15:51:23.45 [16764:11940:0508/155123.458:ERROR:browser_switcher_service.cc(238)] XXX Init()
+
+mai 08, 2020 15:54:01.98 NEW SESSION
+mai 08, 2020 15:54:01.98 [17312:17324:0508/155401.985:ERROR:browser_switcher_service.cc(238)] XXX Init()
+mai 08, 2020 16:02:01.72 [216:4940:0508/160201.726:ERROR:browser_switcher_service.cc(238)] XXX Init()
+mai 08, 2020 16:08:17.18 [20044:20052:0508/160817.182:ERROR:browser_switcher_service.cc(238)] XXX Init()
+
+mai 08, 2020 16:18:15.07 NEW SESSION
+mai 08, 2020 16:18:15.07 [12980:17764:0508/161815.073:ERROR:browser_switcher_service.cc(238)] XXX Init()
+mai 08, 2020 16:24:39.75 [18748:6772:0508/162439.757:ERROR:browser_switcher_service.cc(238)] XXX Init()
+mai 08, 2020 16:24:41.41 [18748:8840:0508/162441.412:ERROR:get_updates_processor.cc(258)] PostClientToServerMessage() failed during GetUpdates with error 2
+
+mai 08, 2020 16:29:40.34 NEW SESSION
+mai 08, 2020 16:29:40.35 [5744:16624:0508/162940.349:ERROR:browser_switcher_service.cc(238)] XXX Init()
+mai 08, 2020 16:39:58.50 [20324:12896:0508/163958.505:ERROR:browser_switcher_service.cc(238)] XXX Init()
+mai 08, 2020 16:42:31.66 [9296:13512:0508/164231.668:ERROR:browser_switcher_service.cc(238)] XXX Init()
+mai 08, 2020 16:49:56.28 [19272:17456:0508/164956.284:ERROR:browser_switcher_service.cc(238)] XXX Init()
+
+mai 13, 2020 12:09:59.66 NEW SESSION
+mai 13, 2020 12:09:59.66 [8152:17220:0513/120959.665:ERROR:browser_switcher_service.cc(238)] XXX Init()
+mai 13, 2020 12:17:22.96 [7516:15184:0513/121722.962:ERROR:browser_switcher_service.cc(238)] XXX Init()
+mai 13, 2020 12:30:31.33 [8752:13224:0513/123031.337:ERROR:browser_switcher_service.cc(238)] XXX Init()
+mai 13, 2020 12:31:18.66 [19244:11664:0513/123118.665:ERROR:browser_switcher_service.cc(238)] XXX Init()
+mai 13, 2020 12:32:20.39 [16504:12124:0513/123220.399:ERROR:browser_switcher_service.cc(238)] XXX Init()
+
+mai 13, 2020 16:27:09.35 NEW SESSION
+mai 13, 2020 16:27:09.35 [20104:17880:0513/162709.352:ERROR:browser_switcher_service.cc(238)] XXX Init()
+
+mai 15, 2020 19:51:57.29 NEW SESSION
+mai 15, 2020 19:51:57.29 [18128:2552:0515/195157.294:ERROR:browser_switcher_service.cc(238)] XXX Init()
+
+mai 16, 2020 11:13:20.28 NEW SESSION
+mai 16, 2020 11:13:20.28 [16288:2616:0516/111320.283:ERROR:browser_switcher_service.cc(238)] XXX Init()
+mai 16, 2020 11:34:42.36 [13360:1848:0516/113442.361:ERROR:browser_switcher_service.cc(238)] XXX Init()
+mai 16, 2020 11:46:04.14 [956:13616:0516/114604.142:ERROR:browser_switcher_service.cc(238)] XXX Init()
+mai 16, 2020 11:48:18.09 [14512:5036:0516/114818.095:ERROR:browser_switcher_service.cc(238)] XXX Init()
+mai 16, 2020 12:00:31.96 [6672:11652:0516/120031.962:ERROR:browser_switcher_service.cc(238)] XXX Init()
+mai 16, 2020 12:21:00.32 [112:13792:0516/122100.322:ERROR:browser_switcher_service.cc(238)] XXX Init()
+
+mai 17, 2020 12:01:19.66 NEW SESSION
+mai 17, 2020 12:01:19.66 [12708:4076:0517/120119.664:ERROR:browser_switcher_service.cc(238)] XXX Init()
+mai 17, 2020 12:03:23.63 [11892:17260:0517/120323.632:ERROR:browser_switcher_service.cc(238)] XXX Init()
+
+mai 17, 2020 17:25:39.56 NEW SESSION
+mai 17, 2020 17:25:39.56 [8516:11376:0517/172539.561:ERROR:browser_switcher_service.cc(238)] XXX Init()
+
+mai 18, 2020 24:00:24.64 NEW SESSION
+mai 18, 2020 24:00:24.64 [10272:12508:0518/000024.648:ERROR:browser_switcher_service.cc(238)] XXX Init()
+
+mai 25, 2020 11:48:01.69 NEW SESSION
+mai 25, 2020 11:48:01.69 [11128:17724:0525/114801.693:ERROR:browser_switcher_service.cc(238)] XXX Init()
+
+mai 27, 2020 12:04:57.99 NEW SESSION
+mai 27, 2020 12:04:57.99 [15312:15748:0527/120457.991:ERROR:browser_switcher_service.cc(238)] XXX Init()
+
+janv. 06, 2021 08:12:47.14 NEW SESSION
+janv. 06, 2021 08:12:47.14 [17604:688:0106/081247.142:ERROR:device_event_log_impl.cc(211)] [08:12:47.142] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: Un périphérique attaché au système ne fonctionne pas correctement. (0x1F)
+janv. 06, 2021 08:22:38.83 [0106/082238.834:ERROR:directory_reader_win.cc(43)] FindFirstFile: Le chemin d’accès spécifié est introuvable. (0x3)
+janv. 06, 2021 08:49:22.01 [17604:688:0106/084922.013:ERROR:device_event_log_impl.cc(211)] [08:49:22.027] USB: usb_service_win.cc:258 Failed to get device driver name: Élément introuvable. (0x490)
+
+janv. 08, 2021 14:11:43.55 NEW SESSION
+janv. 08, 2021 14:11:43.55 [14216:14188:0108/141143.551:ERROR:persistent_memory_allocator.cc(843)] Corruption detected in shared-memory segment.
+janv. 08, 2021 14:11:51.43 [14216:14188:0108/141151.436:ERROR:device_event_log_impl.cc(211)] [14:11:51.437] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: Un périphérique attaché au système ne fonctionne pas correctement. (0x1F)
+janv. 08, 2021 14:12:43.62 [14216:13348:0108/141243.620:ERROR:persistent_memory_allocator.cc(843)] Corruption detected in shared-memory segment.
+janv. 08, 2021 14:21:43.05 [0108/142143.058:ERROR:directory_reader_win.cc(43)] FindFirstFile: Le chemin d’accès spécifié est introuvable. (0x3)
+
+janv. 09, 2021 11:42:11.02 NEW SESSION
+janv. 09, 2021 11:42:11.02 [10276:16316:0109/114211.019:ERROR:device_event_log_impl.cc(211)] [11:42:11.019] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: Un périphérique attaché au système ne fonctionne pas correctement. (0x1F)
+janv. 09, 2021 11:42:11.02 [10276:16316:0109/114211.019:ERROR:device_event_log_impl.cc(211)] [11:42:11.019] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: Un périphérique attaché au système ne fonctionne pas correctement. (0x1F)
+
+janv. 09, 2021 12:55:09.87 NEW SESSION
+janv. 09, 2021 12:55:09.87 [12280:14188:0109/125509.870:ERROR:device_event_log_impl.cc(211)] [12:55:09.869] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: Un périphérique attaché au système ne fonctionne pas correctement. (0x1F)
+janv. 09, 2021 13:05:02.14 [0109/130502.147:ERROR:directory_reader_win.cc(43)] FindFirstFile: Le chemin d’accès spécifié est introuvable. (0x3)
+janv. 09, 2021 13:30:24.22 [12280:14188:0109/133024.229:ERROR:device_event_log_impl.cc(211)] [13:30:24.229] USB: usb_service_win.cc:258 Failed to get device driver name: Élément introuvable. (0x490)

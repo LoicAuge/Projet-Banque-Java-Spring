@@ -1,0 +1,20 @@
+package org.limayrac.banque_bdd.dao;
+
+import org.limayrac.banque_bdd.entities.Users;
+import org.limayrac.banque_bdd.util.BanqueException;
+
+public class HibernateUsers implements UsersDAO {
+
+	@Override
+	public Users rechercheUser(String username) throws BanqueException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void ajouterUser(Users user) throws BanqueException {
+		// TODO Auto-generated method stub
+
+	}
+
+}

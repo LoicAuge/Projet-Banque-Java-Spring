@@ -1,0 +1,3 @@
+eclipse.preferences.version=1
+module-start-timeout=300000
+runtimes=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<runtimes>\r\n  <runtime com.springsource.tcserver.version\="tomcat-8.5.23.A.RELEASE" id\="Pivotal tc Server v3.0 - v3.2" location\="C\:/Program Files (x86)/pivotal-tc-server-developer-3.2.8.RELEASE" name\="Pivotal tc Server v3.0 - v3.2" runtime-type-id\="com.pivotal.server.tc.runtime.80" timestamp\="1"/>\r\n</runtimes>\r\n

@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Sat Jan 09 16:10:22 CET 2021
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\xloli\\.m2\\repository\\org\\springframework\\spring-web\\4.3.23.RELEASE\\spring-web-4.3.23.RELEASE.jar=C\:\\Program Files (x86)\\pivotal-tc-server-developer-3.2.8.RELEASE\\base-instance\\wtpwebapps\\banque-www\\WEB-INF\\lib\\spring-web-4.3.23.RELEASE.jar
+org.eclipse.jst.jee.server\:banque-www=C\:\\Program Files (x86)\\pivotal-tc-server-developer-3.2.8.RELEASE\\base-instance\\wtpwebapps\\banque-www

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/security https://www.springframework.org/schema/security/spring-security.xsd">
+
+		<security:authentication-manager>
+			<security:authentication-provider>
+				<security:user-service>
+					<security:user name="admin" password="adminMdp" authorities="ROLE_ADMIN, ROLE_USER"/>
+					<security:user name="user" password="userMdp" authorities="ROLE_USER"/>
+				</security:user-service>
+			</security:authentication-provider>
+		</security:authentication-manager>
+		
+		<security:http auto-config="true">
+			<security:intercept-url pattern="/admin**" access="ROLE_ADMIN" />
+		</security:http>
+
+</beans:beans>

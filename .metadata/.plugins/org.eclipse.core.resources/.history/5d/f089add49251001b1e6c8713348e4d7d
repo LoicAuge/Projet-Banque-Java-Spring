@@ -1,0 +1,5 @@
+package org.limayrac.banque_bdd.dao;
+
+public interface UsersDAO {
+
+}

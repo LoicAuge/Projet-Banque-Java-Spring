@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+<typeInfo handle="=banque-bdd/src\/main\/java&lt;org.limayrac.banque_bdd.dao{ClientDAO.java[ClientDAO" modifiers="513" timestamp="1610102494930"/>
+<typeInfo handle="=banque-bdd/src\/main\/java&lt;org.limayrac.banque_bdd.dao{CompteDAO.java[CompteDAO" modifiers="513" timestamp="1590666977421"/>
+<typeInfo handle="=banque-metier/src\/main\/java&lt;org.limayrac.banque_metier{BanqueService.java[BanqueService" modifiers="513" timestamp="1610097172501"/>
+<typeInfo handle="=banque-www/banque-bdd-java&lt;org.limayrac.banque_bdd.dao{LogDAO.java[LogDAO" modifiers="513" timestamp="1590653801468"/>
+<typeInfo handle="=banque-bdd/src\/main\/java&lt;org.limayrac.banque_bdd.dao{UsersDAO.java[UsersDAO" modifiers="513" timestamp="1610097840086"/>
+</typeInfoHistroy>

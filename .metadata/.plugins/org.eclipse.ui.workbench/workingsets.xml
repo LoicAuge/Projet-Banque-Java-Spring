@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1588342837767_2" label="Projet-Banque" name="Projet-Banque">
+<item elementID="=banque-bdd" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=banque-www" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=banque-metier" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1588146795934_0" label="Window Working Set" name="Aggregate for window 1588146795934"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1588148066294_1" label="Window Working Set" name="Aggregate for window 1588148066294"/>
+<mruList name="Projet-Banque"/>
+</workingSetManager>
