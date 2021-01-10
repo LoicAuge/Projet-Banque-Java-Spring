@@ -1,0 +1,280 @@
+package org.limayrac.banque;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
+
+import org.limayrac.banque_bdd.dao.*;
+import org.limayrac.banque_bdd.entities.*;
+import org.limayrac.banque_bdd.util.BanqueException;
+import org.limayrac.banque_metier.BanqueService;
+import org.limayrac.banque_metier.BanqueServiceImpl;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.view.RedirectView;
+
+@Controller
+public class FormController {
+
+	private static ApplicationContext contextBDD = new ClassPathXmlApplicationContext("bdd-context.xml", "metier-context.xml");
+	
+	@RequestMapping(value="/admin/createClient")
+	public String newClient(@RequestParam(value="idCli", required=false) Integer idCli, Model model) {
+		if(idCli == null) {
+			String username = null;
+			User princ = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+			username = princ.getUsername();
+		
+			model.addAttribute("username", username);
+			return "createClient";
+		}else {
+			String username = null;
+			User princ = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+			username = princ.getUsername();
+		
+			model.addAttribute("username", username);
+			Client client = getClient(idCli);
+			model.addAttribute("cli",client);
+			return "createClient";
+		}
+	}
+	
+	@RequestMapping(value="/admin/createClient", method=RequestMethod.POST)
+	public String addClient(Model model, @RequestParam(value="idCli", required=false) Integer idCli,
+			@RequestParam("nom") String nom,
+			@RequestParam("prenom") String prenom,
+			@RequestParam("adresse") String adr,
+			@RequestParam("codepostal") String cp,
+			@RequestParam("ville") String ville) {
+		
+		ClientDAO cliDAO = (ClientDAO) contextBDD.getBean("clientDAO");
+		LogDAO logDAO = (LogDAO) contextBDD.getBean("logDAO");
+		String username = null;
+		User princ = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		username = princ.getUsername();
+	
+		model.addAttribute("username", username);
+		if(idCli == null) {
+			Client cli = new Client();
+			cli.setNom(nom);
+			cli.setPrenom(prenom);
+			cli.setAdresse(adr);
+			cli.setCodepostal(Integer.parseInt(cp));
+			cli.setVille(ville);
+			try {
+				cliDAO.ajouterClient(cli);
+				Log log = new Log();
+				log.setLog("Méthode ajouterClient() appelée pour le client "+ cli.getId() +".");
+				log.setDate(new SimpleDateFormat("yyyyMMddHHmmss").format(Calendar.getInstance().getTime()));
+				logDAO.ajouterLog(log);
+				model.addAttribute("msg", "Le client a été créé.");
+			} catch (BanqueException e) {
+				// TODO Auto-generated catch block
+				System.out.println(e.getMessage());
+				e.printStackTrace();
+				model.addAttribute("msg", "Erreur lors de la création du client.");
+			}
+			model.addAttribute("client",cli);
+			model.addAttribute("url", "/banque/admin");
+			return "msg";
+		}else {
+			Client cli = null;
+			try {
+				cli = cliDAO.rechercheClientparID(idCli);
+			} catch (BanqueException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			cli.setNom(nom);
+			cli.setPrenom(prenom);
+			cli.setAdresse(adr);
+			cli.setCodepostal(Integer.parseInt(cp));
+			cli.setVille(ville);
+			try {
+				cliDAO.modifierClient(cli);
+				Log log = new Log();
+				log.setLog("Méthode modifierClient() appelée pour le client "+ cli.getId() +".");
+				log.setDate(new SimpleDateFormat("yyyyMMddHHmmss").format(Calendar.getInstance().getTime()));
+				logDAO.ajouterLog(log);
+				model.addAttribute("msg", "Le client a été modifié.");
+			} catch (BanqueException e) {
+				// TODO Auto-generated catch block
+				System.out.println(e.getMessage());
+				e.printStackTrace();
+				model.addAttribute("msg", "Erreur lors de la modification du client.");
+			}
+			model.addAttribute("client",cli);
+			model.addAttribute("url", "/banque/admin/listingClient");
+			return "msg";
+		}
+	}
+	
+	
+	public Client getClient(@RequestParam int idCli) {
+		ClientDAO cliDAO = (ClientDAO) contextBDD.getBean("clientDAO");
+		LogDAO logDAO = (LogDAO) contextBDD.getBean("logDAO");
+		Client cli = new Client();
+		try {
+			cli = cliDAO.rechercheClientparID(idCli);
+		} catch (BanqueException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return cli;
+	}
+	
+	@RequestMapping(value="/user/setVirementCli")
+	public String virementClient(@RequestParam Integer idCli, Model model) {
+		CompteDAO cptDAO = (CompteDAO) contextBDD.getBean("compteDAO");
+		ClientDAO cliDAO = (ClientDAO) contextBDD.getBean("clientDAO");
+		LogDAO logDAO = (LogDAO) contextBDD.getBean("logDAO");
+		Client cli = null;
+		List<Compte> cpts = null;
+		List<Client> clis = null;
+		
+		String username = null;
+		User princ = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		username = princ.getUsername();
+	
+		model.addAttribute("username", username);
+		try {
+			cpts = cptDAO.rechercheComptesClient(idCli);
+			cli = cliDAO.rechercheClientparID(idCli);
+			clis = cliDAO.rechercheToutClients();
+		} catch (BanqueException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		model.addAttribute("comptes",cpts);
+		model.addAttribute("client",cli);
+		model.addAttribute("clients",clis);
+		return "virementClient";
+	}
+	
+	@RequestMapping(value="/user/setVirementCli", method=RequestMethod.POST)
+	public RedirectView virementClient(Model model,
+			@RequestParam("compteDebit") Integer cptD,
+			@RequestParam("compteCredit") Integer cptC,
+			@RequestParam("montant") Float montant) {
+		
+		if(cptD != cptC) {
+			BanqueService serv = (BanqueService) contextBDD.getBean("BanqueService");
+			LogDAO logDAO = (LogDAO) contextBDD.getBean("logDAO");
+			try {
+				serv.virement(cptD, cptC, montant);
+				Log log = new Log();
+				log.setLog("Méthode virement() appelée du compte "+ cptD +" au compte "+cptC+" d'un montant de "+ montant+".");
+				log.setDate(new SimpleDateFormat("yyyyMMddHHmmss").format(Calendar.getInstance().getTime()));
+				logDAO.ajouterLog(log);
+			} catch (BanqueException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+			return new RedirectView("/banque/user/homeUser");
+	}
+	
+	@RequestMapping(value="/admin/setVirementInter")
+	public String setVirementInter(Model model) {
+			ClientDAO cliDAO = (ClientDAO) contextBDD.getBean("clientDAO");
+			CompteDAO cptDAO = (CompteDAO) contextBDD.getBean("compteDAO");
+			List<Client> clientsTemp = null;
+			List<Client> clients = new ArrayList<Client>();
+			
+			String username = null;
+			User princ = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+			username = princ.getUsername();
+		
+			model.addAttribute("username", username);
+			try {
+				clientsTemp = cliDAO.rechercheToutClients();
+				for(int i=0; i<clientsTemp.size(); i++) {
+					List<Compte> cpts = cptDAO.rechercheComptesClient((int)clientsTemp.get(i).getId());
+					if(cpts.size() >= 1) {
+						clients.add(clientsTemp.get(i));
+					}
+				}
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				System.out.println(e.getMessage());
+				e.printStackTrace();
+			}
+			model.addAttribute("clients",clients);
+			return "choixClientVirement";
+	}
+	
+	@RequestMapping(value="/admin/setVirementInter", method=RequestMethod.POST)
+	public RedirectView virementClient(Model model,
+			@RequestParam("clientDebit") Integer cliD,
+			@RequestParam("clientCredit") Integer cliC){
+		
+		if(cliD != cliC) {
+			return new RedirectView("/banque/admin/setVirementInterbis?idCliD="+cliD.toString()+"&idCliC="+cliC.toString());
+		}else
+		{
+			return new RedirectView("/banque/admin/setVirementCli?idCli="+cliD.toString());
+		}
+			
+	}
+	
+	@RequestMapping(value="/admin/setVirementInterbis")
+	public String setVirementInterbis(@RequestParam(value="idCliD") Integer idCliD,
+			@RequestParam(value="idCliC") Integer idCliC, Model model) {
+		CompteDAO cptDAO = (CompteDAO) contextBDD.getBean("compteDAO");
+		ClientDAO cliDAO = (ClientDAO) contextBDD.getBean("clientDAO");
+		List<Compte> cptsC = null;
+		List<Compte> cptsD = null;
+		Client cliC = null;
+		Client cliD = null;
+		
+		String username = null;
+		User princ = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		username = princ.getUsername();
+	
+		model.addAttribute("username", username);
+		try {
+			cptsC = cptDAO.rechercheComptesClient(idCliC);
+			cptsD = cptDAO.rechercheComptesClient(idCliD);
+			cliC = cliDAO.rechercheClientparID(idCliC);
+			cliD = cliDAO.rechercheClientparID(idCliD);
+		} catch (BanqueException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		model.addAttribute("comptesC",cptsC);
+		model.addAttribute("comptesD",cptsD);
+		model.addAttribute("cliD",cliD);
+		model.addAttribute("cliC",cliC);
+		return "virementInterClient";
+	}
+	
+	@RequestMapping(value="/admin/setVirementInterbis", method=RequestMethod.POST)
+	public RedirectView setVirementInterbis(Model model,
+			@RequestParam("compteDebit") Integer cptD,
+			@RequestParam("compteCredit") Integer cptC,
+			@RequestParam("montant") Float montant) {
+		LogDAO logDAO = (LogDAO) contextBDD.getBean("logDAO");
+		if(cptD != cptC) {
+			BanqueService serv = (BanqueService) contextBDD.getBean("BanqueService");
+			try {
+				serv.virement(cptD, cptC, montant);Log log = new Log();
+				log.setLog("Méthode virement() appelée du compte "+ cptD +" au compte "+cptC+" d'un montant de "+ montant+".");
+				log.setDate(new SimpleDateFormat("yyyyMMddHHmmss").format(Calendar.getInstance().getTime()));
+				logDAO.ajouterLog(log);
+			} catch (BanqueException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+			return new RedirectView("/banque/admin/homeAdmin");
+	}
+}

@@ -132,13 +132,14 @@ public class FormController {
 		return cli;
 	}
 	
-	@RequestMapping(value="/user/setVirementCli")
+	@RequestMapping(value="/**/setVirementCli")
 	public String virementClient(@RequestParam Integer idCli, Model model) {
 		CompteDAO cptDAO = (CompteDAO) contextBDD.getBean("compteDAO");
 		ClientDAO cliDAO = (ClientDAO) contextBDD.getBean("clientDAO");
 		LogDAO logDAO = (LogDAO) contextBDD.getBean("logDAO");
 		Client cli = null;
 		List<Compte> cpts = null;
+		List<Client> clis = null;
 		
 		String username = null;
 		User princ = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -148,16 +149,18 @@ public class FormController {
 		try {
 			cpts = cptDAO.rechercheComptesClient(idCli);
 			cli = cliDAO.rechercheClientparID(idCli);
+			clis = cliDAO.rechercheToutClients();
 		} catch (BanqueException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		model.addAttribute("comptes",cpts);
 		model.addAttribute("client",cli);
+		model.addAttribute("clients",clis);
 		return "virementClient";
 	}
 	
-	@RequestMapping(value="/user/setVirementCli", method=RequestMethod.POST)
+	@RequestMapping(value="/**/setVirementCli", method=RequestMethod.POST)
 	public RedirectView virementClient(Model model,
 			@RequestParam("compteDebit") Integer cptD,
 			@RequestParam("compteCredit") Integer cptC,
@@ -177,11 +180,11 @@ public class FormController {
 				e.printStackTrace();
 			}
 		}
-			return new RedirectView("/banque/admin/listingClient");
+			return new RedirectView("/banque/user/homeUser");
 	}
 	
-	@RequestMapping(value="/admin/setVirementInter")
-	public String setVirementInter(Model model) {
+	@RequestMapping(value="/**/setVirementInter")
+	public String setVirementInter(@RequestParam(value="idCli", required=false) Integer idCli, Model model) {
 			ClientDAO cliDAO = (ClientDAO) contextBDD.getBean("clientDAO");
 			CompteDAO cptDAO = (CompteDAO) contextBDD.getBean("compteDAO");
 			List<Client> clientsTemp = null;
@@ -205,7 +208,20 @@ public class FormController {
 				System.out.println(e.getMessage());
 				e.printStackTrace();
 			}
-			model.addAttribute("clients",clients);
+			if (idCli != null) {
+				List<Client> clients1 = new ArrayList<Client>();
+				try {
+					clients1.add(cliDAO.rechercheClientparID(idCli));
+				} catch (BanqueException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				model.addAttribute("clients1",clients1);
+				model.addAttribute("clients2",clients);
+			}else {
+				model.addAttribute("clients1",clients);
+				model.addAttribute("clients2",clients);
+			}
 			return "choixClientVirement";
 	}
 	
@@ -223,7 +239,21 @@ public class FormController {
 			
 	}
 	
-	@RequestMapping(value="/admin/setVirementInterbis")
+	@RequestMapping(value="/user/setVirementInter", method=RequestMethod.POST)
+	public RedirectView virementClientUser(Model model,
+			@RequestParam("clientDebit") Integer cliD,
+			@RequestParam("clientCredit") Integer cliC){
+		
+		if(cliD != cliC) {
+			return new RedirectView("/banque/user/setVirementInterbis?idCliD="+cliD.toString()+"&idCliC="+cliC.toString());
+		}else
+		{
+			return new RedirectView("/banque/user/setVirementCli?idCli="+cliD.toString());
+		}
+			
+	}
+	
+	@RequestMapping(value="/**/setVirementInterbis")
 	public String setVirementInterbis(@RequestParam(value="idCliD") Integer idCliD,
 			@RequestParam(value="idCliC") Integer idCliC, Model model) {
 		CompteDAO cptDAO = (CompteDAO) contextBDD.getBean("compteDAO");
@@ -254,7 +284,7 @@ public class FormController {
 		return "virementInterClient";
 	}
 	
-	@RequestMapping(value="/admin/setVirementInterbis", method=RequestMethod.POST)
+	@RequestMapping(value="/**/setVirementInterbis", method=RequestMethod.POST)
 	public RedirectView setVirementInterbis(Model model,
 			@RequestParam("compteDebit") Integer cptD,
 			@RequestParam("compteCredit") Integer cptC,
@@ -274,4 +304,6 @@ public class FormController {
 		}
 			return new RedirectView("/banque/admin/homeAdmin");
 	}
+	
+	
 }

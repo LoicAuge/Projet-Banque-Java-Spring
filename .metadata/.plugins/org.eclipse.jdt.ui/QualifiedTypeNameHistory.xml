@@ -46,4 +46,7 @@
 <fullyQualifiedTypeName name="org.limayrac.banque_bdd.entities.Users"/>
 <fullyQualifiedTypeName name="org.springframework.security.core.userdetails.User"/>
 <fullyQualifiedTypeName name="org.springframework.security.core.context.SecurityContextHolder"/>
+<fullyQualifiedTypeName name="org.springframework.web.context.request.RequestContextHolder"/>
+<fullyQualifiedTypeName name="org.springframework.webflow.execution.RequestContextHolder"/>
+<fullyQualifiedTypeName name="org.springframework.webflow.execution.RequestContext"/>
 </qualifiedTypeNameHistroy>

@@ -1,10 +1,10 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <div class="topnav">
-  <a href="/banque">Accueil</a>
+  <a href="homeUser">Accueil</a>
   <a href="createClient">Cr&#233;er client</a>
   <a class="active" href="listingClient">Listing client</a>
-  <a href="setVirementInter">Virement inter-client</a>
+  <a href="setVirementInter?idCli=${client.id}">Virement inter-client</a>
 </div>
 <h1>Virements client ${client.nom} ${client.prenom}</h1>
 <form method="post">
@@ -24,7 +24,7 @@
 		</select><p>
 	</c:if>
 	Montant : <input type="number" name="montant" value=""/><p>
-	<input type="submit" value="Valider le virement"/><p>
+	<input type="submit" value="Choix "/><p>
 </form>
 <style>
 @import url(https://fonts.googleapis.com/css?family=Patua+One|Open+Sans);

@@ -10,9 +10,10 @@
 <body>
 <div class="topnav">
 <div>
-  <a href="/banque">Accueil</a>
+  <a href="homeUser">Accueil</a>
   <a class="active" href="homeUser">Listing compte</a>
   <a href="setVirementCli?idCli=${client.id}">Virement</a>
+  <a href="setVirementInter?idCli=${client.id}">Virement inter-client</a>
   <a href="<c:url value="/j_spring_security_logout"/>">Deconnexion</a>
   </div>
    <b>Connecté en tant que ${username}</b>
@@ -30,7 +31,7 @@
 			</thead>
 			<tbody>
 			<c:forEach var="compte" items="${comptes}">
-				<tr><td>${compte.numero}</td><td>${compte.solde} &#8364;</td><td><a href="${flowExecutionUrl}&_eventId=Virement?idCli=${compte.client.id}">Virement</a></td><!-- <td><a href="supprCpt?idCpt=${compte.numero}&idCli=${compte.client.id}">Supprimer</a></td> --></tr>
+				<tr><td>${compte.numero}</td><td>${compte.solde} &#8364;</td><td><a href="setVirementCli?idCli=${compte.client.id}">Virement</a></td><!-- <td><a href="supprCpt?idCpt=${compte.numero}&idCli=${compte.client.id}">Supprimer</a></td> --></tr>
 			</c:forEach>
 			</tbody>
 		</table>

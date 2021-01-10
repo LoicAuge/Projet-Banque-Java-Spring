@@ -2,7 +2,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <div class="topnav">
 <div>
-  <a href="/banque">Accueil</a>
+  <a href="/banque/home">Accueil</a>
   <a  href="createClient">Créer client</a>
   <a href="listingClient">Listing client</a>
   <a class="active" href="setVirementInter">Virement inter-client</a>
@@ -13,16 +13,16 @@
 <h1>Virements inter-clients</h1>
 <form method="post">
 
-	<c:if test="${not empty clients}">
+	<c:if test="${not empty clients1}">
 	Client débiteur :
 		<select name="clientDebit">
-    		<c:forEach var="item" items="${clients}">
+    		<c:forEach var="item" items="${clients1}">
         		<option value="${item.id}">${item.nom} ${item.prenom} </option>
     		</c:forEach>
 		</select><p>
 		Client créditeur :
 		<select name="clientCredit">
-    		<c:forEach var="item" items="${clients}">
+    		<c:forEach var="item" items="${clients2}">
         		<option value="${item.id}">${item.nom} ${item.prenom}</option>
     		</c:forEach>
 		</select><p>

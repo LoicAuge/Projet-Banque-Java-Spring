@@ -6,6 +6,9 @@
 
 	<view-state id="homeClient" view="viewClient">
 		<input name="idCli"/>
+		<on-exit>
+        	<evaluate expression="T(org.apache.log4j.Logger).getLogger('someLogger').info(idCli)"/>
+   		</on-exit>
 		<transition on="Virement" to="choixCompteD"/>
 	</view-state>
 	
