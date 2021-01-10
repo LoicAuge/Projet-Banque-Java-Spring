@@ -5,10 +5,15 @@
         http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
 
 	<view-state id="homeClient" view="viewClient">
+		<input name="idCli"/>
 		<transition on="Virement" to="choixCompteD"/>
 	</view-state>
 	
-	<view-state id="choixCompteD" view="choixCompteD"></view-state>
+	<view-state id="choixCompteD" view="choixCompteD">
+		<input name="cptD"/>
+		<transition on="choixClientC"></transition>
+	</view-state>
+		
 	<view-state id="choixClientC" view="viewClient"></view-state>
 	<view-state id="choixCompteC" view="viewClient"></view-state>
 	<view-state id="validateVirement" view="viewClient"></view-state>

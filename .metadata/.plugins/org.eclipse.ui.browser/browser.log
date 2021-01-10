@@ -81,3 +81,7 @@ janv. 09, 2021 12:55:09.87 NEW SESSION
 janv. 09, 2021 12:55:09.87 [12280:14188:0109/125509.870:ERROR:device_event_log_impl.cc(211)] [12:55:09.869] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: Un périphérique attaché au système ne fonctionne pas correctement. (0x1F)
 janv. 09, 2021 13:05:02.14 [0109/130502.147:ERROR:directory_reader_win.cc(43)] FindFirstFile: Le chemin d’accès spécifié est introuvable. (0x3)
 janv. 09, 2021 13:30:24.22 [12280:14188:0109/133024.229:ERROR:device_event_log_impl.cc(211)] [13:30:24.229] USB: usb_service_win.cc:258 Failed to get device driver name: Élément introuvable. (0x490)
+
+janv. 09, 2021 23:55:16.49 NEW SESSION
+janv. 09, 2021 23:55:16.49 [13276:13608:0109/235516.492:ERROR:device_event_log_impl.cc(211)] [23:55:16.492] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: Un périphérique attaché au système ne fonctionne pas correctement. (0x1F)
+janv. 10, 2021 24:05:08.26 [0110/000508.266:ERROR:directory_reader_win.cc(43)] FindFirstFile: Le chemin d’accès spécifié est introuvable. (0x3)

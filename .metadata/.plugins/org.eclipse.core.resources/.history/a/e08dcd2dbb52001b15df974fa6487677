@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/webflow
+        http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
+
+	<view-state id="homeClient" view="viewClient">
+		<transition on="Virement" to="choixCompteD"/>
+	</view-state>
+	
+	<view-state id="choixCompteD" view="choixCompteD"></view-state>
+		<input name="cptD"/>
+		
+	<view-state id="choixClientC" view="viewClient"></view-state>
+	<view-state id="choixCompteC" view="viewClient"></view-state>
+	<view-state id="validateVirement" view="viewClient"></view-state>
+
+</flow>
