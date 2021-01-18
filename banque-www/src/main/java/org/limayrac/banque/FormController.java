@@ -84,7 +84,7 @@ public class FormController {
 				model.addAttribute("msg", "Erreur lors de la création du client.");
 			}
 			model.addAttribute("client",cli);
-			model.addAttribute("url", "/banque/admin");
+			model.addAttribute("url", "/banque/admin/homeAdmin");
 			return "msg";
 		}else {
 			Client cli = null;

@@ -205,4 +205,10 @@ public String supprClient(@RequestParam Integer idCli, Model model) {
 	model.addAttribute("url", "/banque/admin/listingClient");
 	return "msg";
 }
+
+@RequestMapping(value="/infosBanque")
+public String infosBanque(Model model) {
+	model.addAttribute("msg","Page d'information de la banque.");
+	return "infosbanque";
+}
 }

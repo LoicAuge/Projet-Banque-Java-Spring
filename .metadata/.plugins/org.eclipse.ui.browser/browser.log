@@ -85,3 +85,9 @@ janv. 09, 2021 13:30:24.22 [12280:14188:0109/133024.229:ERROR:device_event_log_i
 janv. 09, 2021 23:55:16.49 NEW SESSION
 janv. 09, 2021 23:55:16.49 [13276:13608:0109/235516.492:ERROR:device_event_log_impl.cc(211)] [23:55:16.492] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: Un périphérique attaché au système ne fonctionne pas correctement. (0x1F)
 janv. 10, 2021 24:05:08.26 [0110/000508.266:ERROR:directory_reader_win.cc(43)] FindFirstFile: Le chemin d’accès spécifié est introuvable. (0x3)
+
+janv. 18, 2021 22:51:20.07 NEW SESSION
+janv. 18, 2021 22:51:20.07 [18352:6048:0118/225120.071:ERROR:account_info_fetcher.cc(60)] OnGetTokenFailure: Invalid credentials (credentials rejected by server).
+janv. 18, 2021 22:51:23.41 [18352:6048:0118/225123.411:ERROR:device_event_log_impl.cc(211)] [22:51:23.412] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: Un périphérique attaché au système ne fonctionne pas correctement. (0x1F)
+janv. 18, 2021 23:01:17.39 [0118/230117.395:ERROR:directory_reader_win.cc(43)] FindFirstFile: Le chemin d’accès spécifié est introuvable. (0x3)
+janv. 18, 2021 23:11:41.88 [18352:6048:0118/231141.880:ERROR:device_event_log_impl.cc(211)] [23:11:41.880] USB: usb_service_win.cc:258 Failed to get device driver name: Élément introuvable. (0x490)

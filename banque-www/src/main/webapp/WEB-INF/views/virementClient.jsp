@@ -24,7 +24,7 @@
 		</select><p>
 	</c:if>
 	Montant : <input type="number" name="montant" value=""/><p>
-	<input type="submit" value="Choix "/><p>
+	<input type="submit" value="Valider le virement"/><p>
 </form>
 <style>
 @import url(https://fonts.googleapis.com/css?family=Patua+One|Open+Sans);

@@ -16,8 +16,10 @@
 			<item value="1"/>
 			<item value="1"/>
 			<item value="1"/>
+			<item value="1"/>
 		</list>
 		<list key="orderedElements">
+			<item value="org.eclipse.jdt.ui.CompilationUnitEditorbanque-www/src/main/java/org/limayrac/banque/FormController.java"/>
 			<item value="com.springsource.sts.config.ui.editors.SpringConfigEditorbanque-www/src/main/webapp/WEB-INF/spring/root-context.xml"/>
 			<item value="org.eclipse.jdt.ui.CompilationUnitEditorbanque-www/src/main/java/org/limayrac/banque/WindowsController.java"/>
 			<item value="org.eclipse.ui.console.ConsoleView"/>
@@ -27,11 +29,13 @@
 		<list key="orderedProviders">
 			<item value="org.eclipse.ui.editors"/>
 			<item value="org.eclipse.ui.editors"/>
+			<item value="org.eclipse.ui.editors"/>
 			<item value="org.eclipse.e4.ui.parts"/>
 			<item value="org.eclipse.e4.ui.parts"/>
 			<item value="org.eclipse.e4.ui.parts"/>
 		</list>
 		<list key="textArray">
+			<item value="form"/>
 			<item value="root"/>
 			<item value="wind"/>
 			<item value="console"/>

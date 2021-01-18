@@ -19,7 +19,7 @@
 	</c:if>
 	<c:if test="${not empty comptesC}">
 	Compte créditeur (${cliC.nom} ${cliC.prenom}):
-		<select name="clientCredit">
+		<select name="compteCredit">
     		<c:forEach var="item" items="${comptesC}">
         		<option value="${item.numero}">${item.numero} - ${item.solde} &#8364;</option>
     		</c:forEach>

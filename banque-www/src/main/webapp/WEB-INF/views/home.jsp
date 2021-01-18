@@ -123,7 +123,7 @@ tbody:hover > tr:hover td {
         <thead><tr><th>Menu</th><th>Description</th></tr></thead>
 		<tbody>
         <tr><td><a class="active" href="/banque">Accueil</a></td><td>Accueil.</td></tr>
-        <tr><td><a href="home">Connexion</a></td><td>Connexion</td></tr>
+        <tr><td><a href="infosBanque">Informations</a></td><td>Informations sur la banque</td></tr>
 </tbody>
     </table>
 </body>
