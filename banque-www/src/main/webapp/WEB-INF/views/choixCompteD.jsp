@@ -1,7 +1,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <div class="topnav">
-  <a href="/banque">Accueil</a>
+  <a href="homeAdmin">Accueil</a>
   <a  href="createClient">Créer client</a>
   <a href="listingClient">Listing client</a>
   <a class="active" href="setVirementInter">Virement inter-client</a>

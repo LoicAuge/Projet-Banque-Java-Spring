@@ -1,14 +1,10 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <div class="topnav">
-<div>
   <a href="homeUser">Accueil</a>
-  <a class="active" href="homeUser">Listing compte</a>
-  <a href="setVirementCli?idCli=${client.id}">Virement</a>
+  <a href="createClient">Cr&#233;er client</a>
+  <a class="active" href="listingClient">Listing client</a>
   <a href="setVirementInter?idCli=${client.id}">Virement inter-client</a>
-  <a href="<c:url value="/j_spring_security_logout"/>">Deconnexion</a>
-  </div>
-   <b>Connecté en tant que ${username}</b>
 </div>
 <h1>Virements client ${client.nom} ${client.prenom}</h1>
 <form method="post">

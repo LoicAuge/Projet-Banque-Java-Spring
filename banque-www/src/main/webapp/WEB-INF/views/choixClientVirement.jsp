@@ -2,7 +2,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <div class="topnav">
 <div>
-  <a href="/banque/home">Accueil</a>
+  <a href="homeAdmin">Accueil</a>
   <a  href="createClient">Créer client</a>
   <a href="listingClient">Listing client</a>
   <a class="active" href="setVirementInter">Virement inter-client</a>
